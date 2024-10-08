@@ -10,6 +10,7 @@ $(document).ready(function () {
         console.log("Otrzymano wiadomość:", event.data);
         const message = JSON.parse(event.data);
         $('#result').html("Result is: " + message);
+        setImage("1.gif");
     };
 
     socket.onclose = function () {
@@ -25,25 +26,32 @@ $(document).ready(function () {
         socket.send(message);
     }
 
-    // Handle Factorial button click
+    function setImage(name) {
+        document.getElementById("leftImage").src = "resources/" + name;
+        document.getElementById("rightImage").src = "resources/" + name;
+    }
+
     $('#factorialButton').click(function () {
         const number = parseInt($('#number').val(), 10);
         if (isNaN(number) || number < 0 || number > 20) {
             $('#result').html('Error: Please enter a number between 0 and 20 for factorial.');
+            setImage("2.png");
             return;
         }
         sendMessage("factorial", number);
     });
 
-    // Handle Fibonacci button click
     $('#fibonacciButton').click(function () {
         const number = parseInt($('#number').val(), 10);
         if (isNaN(number) || number < 1 || number > 100) {
             $('#result').html('Error: Please enter a number between 1 and 100 for Fibonacci.');
+            setImage("2.png");
             return;
         }
         sendMessage("fibonacci", number);
     });
+
+
 });
 
 

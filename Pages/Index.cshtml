@@ -14,15 +14,17 @@
     <script src="~/js/script.js"></script>
 </head>
 <body>
-    <div class="form-container">
-        <form id="calculationForm">
-            <input type="text" id="number" placeholder="Enter a number" class="text-input" autocomplete="off">
-            <div class="button-container">
-                <button type="button" id="factorialButton" class="button">Factorial</button>
-                <button type="button" id="fibonacciButton" class="button">Fibonacci</button>
-            </div>
-        </form>
-        <div id="result" class="result"></div>
-    </div>
+    <img id="leftImage" src="resources/empty.png" style="float:left;width:300px;height:300px; margin-right: 100px;">
+        <div class="form-container">
+            <form id="calculationForm">
+                <input type="text" id="number" placeholder="Enter a number" class="text-input" autocomplete="off">
+                <div class="button-container">
+                    <button type="button" id="factorialButton" class="button">Factorial</button>
+                    <button type="button" id="fibonacciButton" class="button">Fibonacci</button>
+                </div>
+            </form>
+            <div id="result" class="result"></div>
+        </div>
+    <img id="rightImage" src="resources/empty.png" style="float:right;width:300px;height:300px; margin-left: 100px;">
 </body>
 </html>
